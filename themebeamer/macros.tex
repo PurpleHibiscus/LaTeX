@@ -1,0 +1,66 @@
+\usepackage{fancybox}
+\usepackage[progressbar=frametitle,background=light,block=fill]{theme/beamerthememetropolis2}
+%\usepackage[progressbar=frametitle,background=dark,block=fill]{theme/beamerthememetropolis2}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{esint}
+\usepackage{multicol}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{tcolorbox}
+\usefonttheme{professionalfonts}
+\usepackage{physics}
+\hypersetup{unicode}
+%\usepackage[boldfont]{xeCJK}
+%\setCJKmainfont{AozoraMinchoRegular.ttf}
+\usepackage{empheq}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage{kerkis}
+\usepackage{esint}
+
+\makeatletter
+\newcommand\Cshadowbox{\VerbBox\@Cshadowbox}
+\def\@Cshadowbox#1{%
+  \setbox\@fancybox\hbox{\fbox{#1}}%
+  \leavevmode\vbox{%
+    \offinterlineskip
+    \dimen@=\shadowsize
+    \advance\dimen@ .5\fboxrule
+    \hbox{\copy\@fancybox\kern.5\fboxrule\lower\shadowsize\hbox{%
+      \color{mLightBrown}\vrule \@height\ht\@fancybox \@depth\dp\@fancybox \@width\dimen@}}%
+    \vskip\dimexpr-\dimen@+0.5\fboxrule\relax
+    \moveright\shadowsize\vbox{%
+      \color{mLightBrown}\hrule \@width\wd\@fancybox \@height\dimen@}}}
+\makeatother
+
+\setbeamertemplate{blocks}[rounded][shadow]
+
+\newcommand{\maketitlelight}{\maketitle%
+
+\setbeamertemplate{background canvas}{%
+    \includegraphics[width=\paperwidth, height=\paperheight]{theme/back.png}
+}}
+
+\newcommand{\maketitledark}{\maketitle%
+
+\setbeamertemplate{background}{%
+    \includegraphics[width=\paperwidth, height=\paperheight]{theme/back2.png}
+}
+}
+
+\usepackage{theme/pdfpc-commands}
+
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+\setbeamercovered{transparent}
+
+\usepackage{ruby}
+\renewcommand{\rubysep}{-0.5ex}
