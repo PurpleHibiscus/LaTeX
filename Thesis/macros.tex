@@ -1,0 +1,34 @@
+\usepackage{CJKutf8}
+\usepackage{enumitem} 
+\usepackage{pdfpages}
+\usepackage{gensymb}
+\usepackage{physics}
+\usepackage{multirow}
+\usepackage{stmaryrd}
+\usepackage{appendix}
+\usepackage{oubraces}
+
+\renewcommand{\thesidenote}{\textbf{\textcolor{red!70!black}{\arabic{sidenote}}}}
+
+%\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+%\usepackage{hyphenat}
+\renewcommand*{\sectionformat}{%
+  \llap{\color{DarkBlue}\thesection\autodot\enskip}%
+}
+\renewcommand*{\subsectionformat}{%
+  \llap{\color{DarkBlue}\thesubsection\autodot\enskip}%
+}
+
+\usepackage[whole,autotilde,pdftex]{bxcjkjatype}
+
+\newcommand\newthought[1]{%
+   \noindent\textsc{#1}%
+}
+
+\newlength{\overhang}
+\setlength{\overhang}{\marginparwidth}
+\addtolength{\overhang}{\marginparsep}
+\usepackage[strict]{changepage}
+
