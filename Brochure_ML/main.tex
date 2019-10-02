@@ -1,0 +1,114 @@
+\documentclass[10pt,a4paper,twocolumn,landscape]{article}
+\usepackage{CJKutf8}
+\pagestyle{empty} 
+\parskip 0pt   
+\parindent 0pt  
+\columnsep 0.8in 
+\textwidth 0in 
+
+\usepackage{tikz}
+\usepackage{geometry}
+\geometry{left=0.5in,top=0.5in,right=0.5in,bottom=0.5in} 
+\usepackage{graphicx}
+\usepackage{color,framed}
+\usepackage[utf8]{inputenc}
+\usetikzlibrary{fadings}
+\usetikzlibrary{decorations.fractals}
+\usepackage{pgfplots}
+\usetikzlibrary{lindenmayersystems}
+\usepackage{amsfonts}                                           
+\usepackage{amssymb}
+
+\pgfdeclarelindenmayersystem{A}{
+    \rule{F -> FF[+F][-F]}
+}
+
+\pgfdeclarelindenmayersystem{B}{
+    \rule{F -> ffF[++FF][--FF]}
+}                                   
+
+\tikzset{                                   
+    type/.style={l-system={#1, axiom=F,order=3,step=4pt,angle=60},
+      blue, opacity=0.4, line width=.5mm, line cap=round    
+    },
+}
+    
+\newcommand\drawsnowflake[2][scale=0.6]{
+    \tikz[#1]
+    \foreach \a in {0,60,...,300}  {
+    \draw[rotate=\a,#2] l-system;
+    };
+}
+
+\renewcommand{\thesection}{$\star$}
+\renewcommand{\thesubsection}{$\wp$}
+
+
+\begin{document}
+\begin{CJK}{UTF8}{min}
+\textit{En espérant que vous soyez nombreux !}
+
+
+\rule{7cm}{0.5pt}
+\subsection*{Contact, pour d'éventuelles questions..} 
+Pierre \textsc{Goux}, kkk, \\
+{\em email :} pi.r.goux@gmail.com \\ 
+{\em téléphone :} 06.95.60.69.61
+\begin{flushright}
+\small{Made with \LaTeX}
+\end{flushright}
+\newpage
+
+\begin{center}
+{\bf 
+{\huge{\textsc{Sur titre éventuel}
+}}}
+
+\vspace*{5em}
+
+\normalsize{}
+\def\arete{3}   \def\epaisseur{5}   \def\rayon{2}
+\newcommand{\ruban}{(0,0)
+++(0:0.57735*\arete-0.57735*\epaisseur+2*\rayon)
+++(-30:\epaisseur-1.73205*\rayon)
+arc (60:0:\rayon)   -- ++(90:\epaisseur)
+arc (0:60:\rayon)   -- ++(150:\arete)
+arc (60:120:\rayon) -- ++(210:\epaisseur)
+arc (120:60:\rayon) -- cycle}
+
+\begin{tikzpicture}[very thick,top color=pink,bottom color=purple]
+\shadedraw \ruban;
+\shadedraw [rotate=120] \ruban;
+\shadedraw [rotate=-120] \ruban;
+\draw (-60:4) node[scale=5,rotate=30]{愛 };
+\draw (180:4) node[scale=4.5,rotate=-90]{いる};
+\clip (0,-6) rectangle (6,6); 
+\shadedraw  \ruban;
+\draw (60:4) node [black,xscale=-4,yscale=4,rotate=30]{して};
+\end{tikzpicture}
+
+\end{center}
+
+\begin{center}
+\textit{Ouvert à tous les gens}\\
+{\bf 
+\Large{Commence en Janvier 2016\\\vspace{3pt} Date à discuter\\\vspace{10pt}}
+}
+\end{center}
+
+
+\newpage
+
+\begin{framed}
+\section{Section 1}
+\end{framed}
+\newpage
+\begin{framed}
+\section{Section 2}
+
+\end{framed}
+\end{CJK}
+\end{document}
+
+
+

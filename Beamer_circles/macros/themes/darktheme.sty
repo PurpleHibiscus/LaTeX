@@ -1,0 +1,119 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerx}
+
+\ProcessOptions*
+
+\RequirePackage{hyperref}
+\RequirePackage{calc}
+\RequirePackage{ifthen} % pour utiliser des booleens
+% \RequirePackage{ifpdf} % mode de compilation
+\RequirePackage{graphicx}
+\RequirePackage{geometry}
+%\RequirePackage{xcolor}
+\RequirePackage{lmodern}
+\RequirePackage{multicol}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{mathrsfs}
+\RequirePackage{eso-pic}
+\RequirePackage{transparent}
+\RequirePackage{xargs}
+\RequirePackage{tikz}
+\RequirePackage{stmaryrd}
+\RequirePackage{amsthm}
+
+\usetheme{Madrid}
+\useoutertheme[subsection=true,shadow]{miniframes} %
+\useinnertheme{circles}
+
+\newcommand\AtPagemyLowerRight[1]{\AtPageLowerLeft{%
+\put(\LenToUnit{0.92\paperwidth},\LenToUnit{0.84\paperheight}){#1}}}
+%\AddToShipoutPictureFG{
+%  \AtPagemyLowerRight{{\includegraphics[width=1cm,keepaspectratio]{macros/logo/logo_purple.png}}}
+%}%
+
+
+\newcommand\AtPagemyLowerRightbiss[1]{\AtPageLowerLeft{%
+\put(\LenToUnit{0.82\paperwidth},\LenToUnit{0.88\paperheight}){#1}}}
+%\AddToShipoutPictureFG{
+%  \AtPagemyLowerRightbiss{{\includegraphics[width=1.75cm,keepaspectratio]{ulvac.png}}}
+%}%
+
+\newcommand\AtPagemyLowerRightbis[1]{\AtPageLowerLeft{%
+\put(\LenToUnit{0.05\paperwidth},\LenToUnit{0.05\paperheight}){#1}}}
+
+%=======================================================================
+% Definition des couleurs
+%=======================================================================
+\definecolor{bleu303}{RGB}{0,90,135}            
+\colorlet{darkbleu303}{black!20!bleu303}           
+\colorlet{lightbleu303}{white!20!bleu303}          
+\colorlet{ultralightbleu303}{white!80!bleu303}     
+\definecolor{rouge485}{RGB}{213,43,30}             
+\colorlet{darkrouge485}{black!20!rouge485}         
+\colorlet{lightrouge485}{white!20!rouge485}        
+\colorlet{ultralightrouge485}{white!80!rouge485}   
+\definecolor{vert575}{HTML}{00C41A}             
+\colorlet{darkvert575}{black!20!vert575}           
+\colorlet{lightvert575}{white!20!vert575}          
+\colorlet{ultralightvert575}{white!80!vert575}     
+
+%=======================================================================
+% Definition du theme beamer
+%=======================================================================
+%---------- Couleurs propres au theme
+\colorlet{titlecolor}{ultralightbleu303}
+\colorlet{boxtitle}{black}
+\colorlet{fgnormal}{white}
+\colorlet{bgnormal}{black}
+\colorlet{bglogo}{ultralightbleu303}
+\colorlet{bdyitemize}{black!80!white}
+\colorlet{sbdyitemize}{black}
+
+%---------- Parametres generaux
+\setbeamercovered{transparent=70}
+\usefonttheme{default}
+%\usefonttheme{professionalfonts}
+\usefonttheme[stillsansseriflarge,stillsansserifsmall]{serif}
+
+%---------- Couleurs generales
+
+\setbeamercolor*{palette quaternary}{fg=ultralightbleu303,bg=black}
+\setbeamercolor*{palette secondary}{fg=ultralightbleu303,bg=black}
+\setbeamercolor*{palette tertiary}{fg=ultralightbleu303,bg=black}
+\setbeamercolor*{palette primary}{fg=black,bg=ultralightbleu303}
+
+\setbeamercolor{title}{fg=ultralightbleu303, bg=black}
+\setbeamercolor{normal text}{fg=fgnormal,bg=bgnormal}               
+\setbeamercolor{alerted text}{fg=white!20!rouge485}                          
+\setbeamercolor{logo}{bg=bglogo}                                    
+\setbeamercolor{itemize/enumerate body}{fg=ultralightbleu303}              
+\setbeamercolor{itemize/enumerate subbody}{fg=ultralightbleu303}          
+\setbeamertemplate{itemize item}[circle]                            
+\setbeamertemplate{itemize subitem}[triangle]                       
+\setbeamertemplate{enumerate item}[circle]                          
+\setbeamertemplate{enumerate subitem}[circle]                       
+\setbeamertemplate{navigation symbols}{}                            
+\setbeamertemplate{blocks}[shadow=false]                            
+\setbeamercolor{block title}{bg=lightbleu303,fg=white}                
+\setbeamercolor{block body}{bg=ultralightbleu303,fg=black}          
+\setbeamercolor{block title alerted}{bg=white!15!rouge485,fg=white}       
+\setbeamercolor{block body alerted}{bg=ultralightrouge485,fg=black} 
+\setbeamercolor{block title example}{bg=darkvert575,fg=white}        
+\setbeamercolor{block body example}{bg=ultralightvert575,fg=black}  
+
+\usecolortheme[named=ultralightbleu303]{structure}
+
+\setbeamerfont{section number projected}{%
+  family=\rmfamily,series=\bfseries,size=\normalsize}
+\setbeamercolor{section number projected}{bg=ultralightbleu303,fg=black}
+
+\setbeamercolor{frametitle}{fg=ultralightbleu303,bg=black}
+
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+
+\addtobeamertemplate{frametitle}{\pgfsetfillopacity{0.6}}{\pgfsetfillopacity{1}}
+
+\setbeamertemplate{itemize items}[ball]
+
+\endinput

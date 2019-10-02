@@ -1,0 +1,79 @@
+\usepackage{fancybox}
+\usepackage{macros/themes/whitetheme}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{esint}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage{animate}
+\usepackage[printwatermark]{xwatermark}
+%\newwatermark[pages=1,angle=0,scale=1,xpos=0,ypos=0]{\includegraphics[height=0.8\paperheight]{macros/taplogo.eps}}
+\graphicspath{{img/}}
+\usepackage{soul}
+\usepackage{animate}
+%\usepackage{CJKutf8}
+\usepackage{pbsi}
+\usepackage{tcolorbox}
+%\usepackage[english,japanese]{babel}
+%\usefonttheme{serif}
+\usefonttheme{professionalfonts}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{physics}
+\usepackage{xeCJK}
+\setCJKmainfont{AozoraMinchoRegular.ttf}
+\usepackage{empheq}
+\usepackage[T1]{fontenc}
+\usepackage{concmath}
+\makeatletter
+\newcommand\Cshadowbox{\VerbBox\@Cshadowbox}
+\def\@Cshadowbox#1{%
+  \setbox\@fancybox\hbox{\fbox{#1}}%
+  \leavevmode\vbox{%
+    \offinterlineskip
+    \dimen@=\shadowsize
+    \advance\dimen@ .5\fboxrule
+    \hbox{\copy\@fancybox\kern.5\fboxrule\lower\shadowsize\hbox{%
+      \color{darkbleu303}\vrule \@height\ht\@fancybox \@depth\dp\@fancybox \@width\dimen@}}%
+    \vskip\dimexpr-\dimen@+0.5\fboxrule\relax
+    \moveright\shadowsize\vbox{%
+      \color{darkbleu303}\hrule \@width\wd\@fancybox \@height\dimen@}}}
+\makeatother
+
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+\definecolor{bleu303}{RGB}{0,90,135}
+\definecolor{bg}{HTML}{00FFFF}
+\renewcommand{\d}{{d}}
+
+%\usepackage{textpos}
+
+\setbeamertemplate{frametitle}[default][left]
+\addtobeamertemplate{frametitle}{\vspace{-.3\baselineskip}}
+%\addtobeamertemplate{frametitle}{}{%
+%\begin{textblock*}{100mm}(.85\textwidth,-.5cm)
+%\includegraphics[height=1.5cm,keepaspectratio]{macros/taplogof.eps}
+%\end{textblock*}}
+
+\definecolor{rouge}{RGB}{213,43,30}             
+\definecolor{vert575}{HTML}{00C41A}             
+\colorlet{vert}{black!20!vert575}           
+
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+\everymath{\displaystyle}
+
+
+\AtBeginSection[]
+  {
+    \ifnum \value{framenumber}>5
+      \begin{frame}<beamer>
+      \frametitle{Plan}
+      \tableofcontents[currentsection]
+      \end{frame}
+    \else
+    \fi
+  }
+
+\AtBeginSection[]{\stepcounter{subsection}}
+

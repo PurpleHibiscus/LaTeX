@@ -1,0 +1,101 @@
+\documentclass[a4paper,10pt,twoside]{article}
+%\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{url,csquotes}
+\usepackage[hidelinks,hyperfootnotes=false]{hyperref}
+\usepackage[titlepage,fancysections,pagenumber, sectionmark]{polytechnique}
+\usepackage{polytechnique}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{color}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage{pdfpages}
+\usepackage{xeCJK}
+\setCJKmainfont{AozoraMinchoRegular.ttf}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage{subfiles}
+\usepackage{array}
+\usepackage[toc]{glossaries}
+\usepackage{biblatex}
+\addbibresource{biblio.bib}
+
+\title{
+Stimulated emission of gammay rays from thermal neutron capture by Gadolinium in Super-Kamiokande
+}
+\subtitle{\underline{Rapport de stage de recherche}}
+\author{Pierre \textsc{Goux}\\
+\vspace{1em}
+With ~ Franz \textsc{Glessgen}\\
+\begin{multicols}{2}
+\underline{\textbf{\small{Supervisor}}}\\ 作田誠 \textsc{Sakuda} Makoto\\ \textit{\textbf{Okayama University}}\\\textit{ Département de physique}\\
+\underline{\textbf{\small{Référent}}}\\ 
+Michel \textsc{Gonin}\\ \textit{\textbf{Ecole polytechnqiue}}\\\textit{Affiliation}
+\end{multicols}
+}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thefigure}{\thesubsection.\arabic{figure} --}
+\captionsetup[figure]{labelfont=sc,textfont=normalfont}
+\captionsetup[figure]{labelformat=simple,labelsep=none}
+
+\makeglossaries 
+
+\begin{document}
+
+\maketitle
+
+
+\subsection*{Note préliminaire}
+
+Mon stage ayant été effectué au Japon, il me parait nécessaire dans la rédaction de ce rapport, par respect et par principe, de conserver la plupart des notations, appellations et suffixes propres aux normes de respect conventionnelles japonaises. \\
+
+Je tiens également à préciser, pour ne pas écorcher leurs noms et par respect pour toutes ces personnes qui m'ont accompagné et qui seront citées , que les noms complets sont conventionnellement écrits au Japon dans l'ordre "nom, prénom", et c'est l'ordre que j'adopterai. 
+A titre indicatif, le prénom étant généralement peu utilisé, Nani-san est équivalent à M. Nani ou Mme Nani. Il n'y a pas de distinction de genre, similaire à Madame/Monsieur. D'autres suffixes honorifiques (-sensei, -san, -sama..) peuvent également apparaître dans ce rapport, chacun d'eux ayant un sens particulier, mais n'étant essentiellement qu'une formule respectueuse spécifiques aux normes de politesse japonaises lorsqu'on désigne une personne.\\
+
+\subsection*{Abstract}
+\subfile{abstract}
+
+
+\section*{Remerciements}
+\addcontentsline{toc}{section}{Remerciements}
+\subfile{remerciements}
+
+\newpage
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+\subfile{intro}
+
+\tableofcontents
+
+\subfile{part1}
+%\subfile{part2}
+%\subfile{part3}
+
+
+
+\listoffigures
+\listoftables
+
+\section*{Références}
+\addcontentsline{toc}{section}{Références bibliographiques}
+
+\printbibliography
+
+\printglossaries
+
+\appendix
+\section*{Appendices}
+\subfile{annexes}
+
+
+
+\end{document}

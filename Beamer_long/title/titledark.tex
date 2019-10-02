@@ -1,0 +1,40 @@
+\begin{frame}[t,plain]{\underline{\small{}}}
+\vspace*{-1.5em}
+\begin{center}
+\boxput*(0,1){
+    \colorbox{black}{\textcolor{ultralightbleu303}{\large{\textit{Short Surtitle}}}}
+}{    
+\setlength{\fboxsep}{5pt}
+\Cshadowbox{\begin{minipage}{.7\linewidth}
+\vspace{.5em}
+\begin{small}
+\centering
+\textcolor{ultralightbleu303}{\Large{\textbf{Pourquoi c'est vide}}\\
+\vspace{.2em}
+\Large{\textbf{Title of the interesting stuff}}}\\
+\vspace{.5em}
+\end{small}
+\end{minipage}}
+}\\
+\vspace*{.5em}
+\centering
+{\large{\textbf{日本語でも書くことができる\\\vspace{.5em}
+\textcolor{ultralightbleu303}{難しい漢字も憂鬱とか鬮とか瘠とか薔薇}}}}\\
+\vspace*{1.5em}
+Pierre \textsc{Goux}$^1$, Mars 20, 2018 \\
+\vspace{1em}
+
+\begin{minipage}{.2\linewidth}\hfill\vfill\end{minipage}\begin{minipage}{.7\linewidth}\textit{\small{Outline of the stuff, commentary, abstract, or whatever seems useful to be put there } }\end{minipage}
+\end{center}
+%\vspace{.5em}
+\begin{flushright}
+\footnotesize $^1$ Ecole polytechnique, CNRS, affiliation
+\end{flushright}
+
+\end{frame}
+
+\newcommand\AtPagemyLowerRight[1]{\AtPageLowerLeft{%
+\put(\LenToUnit{0.05\paperwidth},\LenToUnit{0.84\paperheight}){#1}}}
+\AddToShipoutPictureFG{
+  \AtPagemyLowerRight{{\includegraphics[width=1cm,keepaspectratio]{macros/logo/armesclair.pdf}}}
+}%

@@ -1,0 +1,100 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancybox}
+\usepackage{macros/themes/darktheme}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{esint}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage{animate}
+\usepackage[printwatermark]{xwatermark}
+\newwatermark*[pages=1,angle=0,scale=.35,xpos=-50,ypos=-20]{\includegraphics[height=0.8\paperheight]{macros/logo/armesclair.pdf}}
+%\newwatermark*[pages=1,angle=0,scale=.28,xpos=55,ypos=33]{\includegraphics[height=0.8\paperheight]{macros/logo/logo_purple.png}}
+\graphicspath{{img/}}
+\usepackage{soul}
+\usepackage{animate}
+\usepackage{CJKutf8}
+\usepackage{pbsi}
+\usepackage{tcolorbox}
+%\usepackage[english,japanese]{babel}
+%\usefonttheme{professionalfonts}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,backgrounds}
+\usepackage{physics}
+
+\makeatletter
+\newcommand\Cshadowbox{\VerbBox\@Cshadowbox}
+\def\@Cshadowbox#1{%
+  \setbox\@fancybox\hbox{\fbox{#1}}%
+  \leavevmode\vbox{%
+    \offinterlineskip
+    \dimen@=\shadowsize
+    \advance\dimen@ .5\fboxrule
+    \hbox{\copy\@fancybox\kern.5\fboxrule\lower\shadowsize\hbox{%
+      \color{ultralightbleu303}\vrule \@height\ht\@fancybox \@depth\dp\@fancybox \@width\dimen@}}%
+    \vskip\dimexpr-\dimen@+0.5\fboxrule\relax
+    \moveright\shadowsize\vbox{%
+      \color{ultralightbleu303}\hrule \@width\wd\@fancybox \@height\dimen@}}}
+\makeatother
+
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+\definecolor{bleu303}{RGB}{0,90,135}
+\definecolor{bg}{HTML}{00FFFF}
+\renewcommand{\d}{\mathrm{d}}
+
+
+\setbeamertemplate{frametitle}[default][center]
+\addtobeamertemplate{frametitle}{\vspace{-.6\baselineskip}}
+
+\definecolor{rouge}{RGB}{213,43,30}             
+\definecolor{vert575}{HTML}{00C41A}             
+\colorlet{vert}{black!20!vert575}           
+
+
+
+\AtBeginSection[]
+  {
+    \ifnum \value{framenumber}>5
+    \begin{frame}<beamer>\frametitle{\underline{Outline}}
+\begin{minipage}{.1\linewidth}\hfill\vfill\end{minipage}\begin{minipage}{.8\linewidth}\tableofcontents[currentsection] \end{minipage}
+\end{frame}
+    \else
+    \fi
+  }
+
+\makeatletter
+\newlength{\test}
+
+\def\sectionentry#1#2#3#4#5{% section number, section title, page
+    \ifnum#5=\c@part%
+    \beamer@section@set@min@width
+    \box\beamer@sectionbox\hskip1.875ex plus 1fill%
+    \beamer@xpos=0\relax%
+    \beamer@ypos=1\relax%
+    \setbox\beamer@sectionbox=
+    \hbox{\def\insertsectionhead{#2}%
+        \def\insertsectionheadnumber{#1}%
+        \def\insertpartheadnumber{#5}%
+        {%
+            \usebeamerfont{section in head/foot}\usebeamercolor[fg]{section in head/foot}%
+            \ifnum\c@section=#1%
+            \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot}}}%
+            \else%
+            \hyperlink{Navigation#3}{{\usebeamertemplate{section in head/foot shaded}}}%
+            \fi}%
+                \ifnum\c@section=#1%
+                \settowidth{\test}{\insertsubsection}
+                \raisebox{-\baselineskip}{\makebox[0cm][l]{\hskip-\test\insertsubsection}}
+                \fi%
+    }%
+    \ht\beamer@sectionbox=1.875ex%
+    \dp\beamer@sectionbox=0.75ex%
+    \fi%
+    \ignorespaces}
+\makeatletter
+
+
+
+
